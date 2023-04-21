@@ -1,5 +1,4 @@
 from utils import sort_data, get_data, filter_data, format_data
-import pytest
 
 
 def test_sort_data(test_data):
