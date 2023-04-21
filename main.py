@@ -1,4 +1,4 @@
-from trening import get_data, filter_data, sort_data, format_data
+from utils import get_data, filter_data, sort_data, format_data
 
 
 def main():
