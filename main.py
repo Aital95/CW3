@@ -1,4 +1,4 @@
-from utils import get_data, filter_data, sort_data, format_data
+from trening import get_data, filter_data, sort_data, format_data
 
 
 def main():
@@ -7,8 +7,8 @@ def main():
     data = sort_data(data)
     data = format_data(data)
 
-    for row in data:
-        print(row)
+    for operation in data:
+        print(operation)
 
     #print(data)
 
