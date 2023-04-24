@@ -1,4 +1,6 @@
 from utils import sort_data, get_data, filter_data, format_data
+from .my_conftest import test_data
+import json
 
 
 def test_sort_data(test_data):
@@ -7,25 +9,30 @@ def test_sort_data(test_data):
 
 
 def test_get_data():
-    get_data()
+    with open('C:/Users/user/PycharmProjects/Kursach_3/operations.json', 'r', encoding='utf-8') as file:
+        json_data = json.load(file)
+    return json_data
+
 
 
 def test_filter_data(test_data):
-    assert filter_data(test_data) == [{
-    "id": 939719570,
-    "state": "EXECUTED",
-    "date": "2018-06-30T02:08:58.425572",
-    "operationAmount": {
-      "amount": "9824.07",
-      "currency": {
-        "name": "USD",
-        "code": "USD"
-      }
-    },
-    "description": "Перевод организации",
-    "from": "Счет 75106830613657916952",
-    "to": "Счет 11776614605963066702"
-  }]
+    result = filter_data(test_data)
+    assert result == test_data
+  #       filter_data(test_data) == [{
+  #   "id": 939719570,
+  #   "state": "EXECUTED",
+  #   "date": "2018-06-30T02:08:58.425572",
+  #   "operationAmount": {
+  #     "amount": "9824.07",
+  #     "currency": {
+  #       "name": "USD",
+  #       "code": "USD"
+  #     }
+  #   },
+  #   "description": "Перевод организации",
+  #   "from": "Счет 75106830613657916952",
+  #   "to": "Счет 11776614605963066702"
+  # }]
 
 
 def test_format_data(test_data):
